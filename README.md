@@ -1,83 +1,162 @@
-🧬 CMV/EBV TCR Repertoire Analysis
-📌 Overview
-This project presents a computational analysis of CMV-associated T-cell receptor (TCR) repertoires using paired α/β chain data. The goal is to explore sequence-level patterns, gene associations, and physicochemical properties of CDR3 regions.
+# 🧬 CMV/EBV TCR Repertoire Analysis
 
-🎯 Objectives
-Analyze CDR3β motif patterns (e.g., CASS…F/Y/E)
-Compare CMV-specific repertoires with a human baseline dataset
-Identify motif enrichment and depletion patterns
-Investigate public vs private clonotypes
-Explore physicochemical properties of terminal amino acids
-Evaluate TRBV/TRAV gene associations with motif classes
-🧪 Methods
-1. Data Processing
-Input: VDJdb-derived CMV and human baseline datasets
-Cleaning: removal of invalid sequences and normalization of gene names
-Separation of TRA and TRB chains with paired analysis
-2. Motif Analysis
-Classification of CDR3β sequences into:
+![Python](https://img.shields.io/badge/Python-3.10+-blue.svg)
+![Pandas](https://img.shields.io/badge/pandas-data%20analysis-lightblue.svg)
+![SciPy](https://img.shields.io/badge/SciPy-statistics-orange.svg)
+![Matplotlib](https://img.shields.io/badge/visualization-matplotlib-green.svg)
+![Seaborn](https://img.shields.io/badge/Seaborn-statistics-blueviolet.svg)
+![Status](https://img.shields.io/badge/status-research%20project-brightgreen.svg)
 
-CASS…F
-CASS…Y
-CASS…E
-Other
-Frequency and percentage calculations
+---
 
-3. Enrichment Analysis
-Computation of log2 enrichment:
+## 📌 Overview
+
+This project presents a computational analysis of CMV-associated T-cell receptor (TCR) repertoires using paired α/β chain data. It investigates sequence-level patterns, gene usage, and physicochemical properties of CDR3 regions, with comparison against a human baseline repertoire.
+
+The goal is to distinguish **true antigen-driven signatures** from **background repertoire structure**.
+
+---
+
+## 🎯 Objectives
+
+- Characterize CDR3β motif patterns (e.g., `CASS...F/Y/E`)
+- Compare CMV-specific repertoires with a human baseline
+- Identify motif enrichment and depletion patterns
+- Analyze public vs private clonotypes
+- Explore physicochemical properties of CDR3 terminal residues
+- Investigate TRBV/TRAV gene–motif associations
+
+---
+
+## 🧪 Methods
+
+### 1. Data Processing
+- Source: VDJdb-derived CMV and human baseline datasets  
+- Cleaning: sequence filtering and gene normalization  
+- Separation of TRA and TRB chains for paired analysis  
+
+---
+
+### 2. Motif Analysis
+CDR3β sequences were grouped into:
+
+- `CASS...F`  
+- `CASS...Y`  
+- `CASS...E`  
+- Other  
+
+Metrics:
+- Frequency distribution
+- Cross-dataset comparison
+
+---
+
+### 3. Enrichment Analysis
 
 log2(CMV frequency / Human frequency)
 
-Identification of overrepresented and underrepresented motifs
+- Positive values → enrichment in CMV repertoire  
+- Negative values → depletion  
 
-4. Public vs Private Clonotypes
-Public: shared across multiple subjects
-Private: unique to a single subject
-Comparative distribution analysis
-5. Physicochemical Profiling
-Grouping terminal amino acids into:
+---
 
-Aromatic
-Hydrophobic
-Charged (Positive/Negative)
-Other
-Frequency and enrichment analysis
+### 4. Public vs Private Clonotypes
 
-6. Statistical Analysis
-Chi-square test for association between:
+- **Public:** shared across multiple individuals  
+- **Private:** unique to a single individual  
 
-TRBV/TRAV genes and motif classes
-Effect size estimation using Cramér’s V
+---
 
-📊 Key Findings
-CASS…F motifs are dominant but not specifically enriched in CMV
-CMV repertoires show enrichment in hydrophobic and charged residues
-Negative residues exhibit strong relative enrichment despite low frequency
-Public TCRs show stronger motif conservation than private ones
-Gene–motif associations suggest structured repertoire organization
-🧠 Interpretation
-The results indicate that CMV-associated TCR repertoires are shaped not only by sequence motifs but also by underlying physicochemical constraints and gene usage patterns.
+### 5. Physicochemical Profiling
 
-⚠️ Limitations
-Pairing of TRA/TRB chains is based on dataset annotations
-Low-frequency categories may inflate enrichment values
-Motif abstraction simplifies full sequence complexity
-🛠 Tools & Libraries
-Python
-pandas
-numpy
-matplotlib
-seaborn
-scipy
-📂 Output
-Bar plots (motif distribution, enrichment)
-Heatmaps (TRBV vs motif)
-Public vs private comparisons
-Physicochemical distribution plots
-🚀 Future Work
-Position-specific amino acid analysis
-Entropy and diversity metrics
-Machine learning classification of TCR specificity
-Cross-pathogen comparison (CMV vs other viruses)
-📬 Contact
-For collaboration or discussion, feel free to connect.
+Terminal amino acids grouped into:
+
+- Aromatic  
+- Hydrophobic  
+- Positively charged  
+- Negatively charged  
+- Other  
+
+---
+
+### 6. Statistical Analysis
+
+- Chi-square test for TRBV/TRAV vs motif association  
+- Cramér’s V for effect size estimation  
+
+---
+
+## 📊 Key Findings
+
+- `CASS...F` motifs dominate but are not CMV-specific  
+- CMV repertoires show enrichment in hydrophobic and charged residues  
+- Negative residues show strong relative enrichment  
+- Public TCRs are more conserved than private ones  
+- TRBV/TRAV usage shows structured motif associations  
+
+---
+
+## 🧠 Interpretation
+
+After baseline normalization, several apparent enrichments were reduced, suggesting that part of the signal reflects intrinsic repertoire structure rather than CMV-specific antigen selection alone.
+
+---
+
+## 📈 Figures
+
+### Motif Distribution
+![Motif Distribution](figures/motif_distribution.png)
+
+---
+
+### Enrichment Heatmap (CMV vs Human)
+![Enrichment Heatmap](figures/enrichment_heatmap.png)
+
+---
+
+### Public vs Private Clonotypes
+![Public vs Private](figures/public_private_clonotypes.png)
+
+---
+
+### Physicochemical Profile
+![Physicochemical Profile](figures/physicochemical_profile.png)
+
+---
+
+### TRBV–Motif Associations
+![TRBV Heatmap](figures/trbv_motif_heatmap.png)
+
+---
+
+## ⚠️ Limitations
+
+- TRA/TRB pairing depends on dataset annotations  
+- Low-frequency categories may inflate enrichment values  
+- Motif abstraction simplifies sequence complexity  
+- Limited donor diversity control  
+
+---
+
+## 🛠 Tools & Libraries
+
+- Python  
+- pandas  
+- numpy  
+- matplotlib  
+- seaborn  
+- scipy  
+
+---
+
+## 🚀 Future Work
+
+- Position-specific amino acid analysis  
+- Diversity and entropy metrics  
+- Machine learning models for TCR specificity  
+- Cross-virus comparisons (CMV vs EBV)  
+- Sequence embedding approaches  
+
+---
+
+## 📂 Repository Structure
