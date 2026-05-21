@@ -102,33 +102,6 @@ After baseline normalization, several apparent enrichments were reduced, suggest
 
 ---
 
-## 📈 Figures
-
-### Motif Distribution
-![Motif Distribution](figures/motif_distribution.png)
-
----
-
-### Enrichment Heatmap (CMV vs Human)
-![Enrichment Heatmap](figures/enrichment_heatmap.png)
-
----
-
-### Public vs Private Clonotypes
-![Public vs Private](figures/public_private_clonotypes.png)
-
----
-
-### Physicochemical Profile
-![Physicochemical Profile](figures/physicochemical_profile.png)
-
----
-
-### TRBV–Motif Associations
-![TRBV Heatmap](figures/trbv_motif_heatmap.png)
-
----
-
 ## ⚠️ Limitations
 
 - TRA/TRB pairing depends on dataset annotations  
