@@ -98,7 +98,7 @@ Terminal amino acids grouped into:
 
 ## 🧠 Interpretation
 
-After baseline normalization, several apparent enrichments were reduced, suggesting that part of the signal reflects intrinsic repertoire structure rather than CMV-specific antigen selection alone.
+Several apparently enriched alternative motifs lost statistical significance after baseline-aware normalization, suggesting that part of the observed signal was driven by intrinsic TCR repertoire architecture rather than true antigen-specific selection.
 
 ---
 
